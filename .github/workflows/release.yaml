@@ -6,15 +6,18 @@ permissions:
 on:
   push:
     tags:
-      - v[0-9]+.*
+      - v[0-9]+.[0-9]+.*
 
 jobs:
   create-release:
+    if: github.repository_owner == 'Cr4shd3v'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: taiki-e/create-gh-release-action@v1
         with:
+          title: $version
+          branch: master|v[0-9]+
           token: ${{ secrets.GITHUB_TOKEN }}
       - uses: taiki-e/upload-rust-binary-action@v1
         with:
