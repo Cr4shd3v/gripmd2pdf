@@ -11,7 +11,12 @@ on:
 jobs:
   create-release:
     if: github.repository_owner == 'Cr4shd3v'
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
       - uses: taiki-e/create-gh-release-action@v1
