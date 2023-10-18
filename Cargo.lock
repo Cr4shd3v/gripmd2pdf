@@ -376,7 +376,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "grip2pdf"
+name = "gripmd2pdf"
 version = "0.1.0"
 dependencies = [
  "clap",
