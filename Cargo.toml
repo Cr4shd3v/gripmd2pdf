@@ -8,4 +8,4 @@ edition = "2021"
 [dependencies]
 clap = { version = "^4.4.6", features = ["derive"] }
 which = "^5.0.0"
-headless_chrome = "^1.0.6"
+headless_chrome = "^1.0.8"
